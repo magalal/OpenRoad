@@ -62,12 +62,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\opengl\freeglut\lib\freeglut.lib" />
-    <Library Include="..\..\opengl\glew-1.11.0\lib\glew32.lib" />
-    <Library Include="..\..\opengl\SDL2-2.0.3\lib\x86\SDL2.lib" />
-    <Library Include="..\..\opengl\SDL2-2.0.3\lib\x86\SDL2main.lib" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="GetGlut.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -121,5 +115,11 @@
     <Text Include="ObjLibrary\ObjLibrary-development-log.txt">
       <Filter>ObjLibrary</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\dependacies\freeglut\lib\freeglut.lib" />
+    <Library Include="..\..\dependacies\glew-1.11.0\lib\glew32.lib" />
+    <Library Include="..\..\dependacies\SDL2-2.0.3\lib\x86\SDL2.lib" />
+    <Library Include="..\..\dependacies\SDL2-2.0.3\lib\x86\SDL2main.lib" />
   </ItemGroup>
 </Project>
