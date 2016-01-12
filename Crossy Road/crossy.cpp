@@ -23,11 +23,12 @@ void reshape(int w, int h);
 void update();
 void display();
 void drawQuad(int x, int y);
-
+void moveObject(ObjModel x,float  z, float  xmin, float xmax,float scale,float  y,int steps,int i=0);
 ObjModel mountain;
 ObjModel building;
 ObjModel charchater1;
 ObjModel car1;
+float count_steps[]={0,0,0,0,0,0,0,0,0,0};
 
 int main(int argc, char* argv[])
 {
@@ -132,24 +133,41 @@ void display()
 		//glColor3f(0.0f,0.0f,0.0f);
         glScalef(0.05f, 0.05f, 0.05f);
         building.draw();
-    glPopMatrix();
-
-	glPushMatrix();
-        glTranslatef(5.0f, 0.0f, 20.0f);
-		//glRotatef(45.0f, 0.0f, 1.0f, 0.0f);
-		//glColor3f(0.0f,0.0f,0.0f);
-        glScalef(0.05f, 0.05f, 0.05f);
-        car1.draw();
-    glPopMatrix();
-	glPushMatrix();
+		glPopMatrix();
+		moveObject(car1,-10,1,10,0.09,0,5,0);
+			//glPushMatrix();
+		 //       glTranslatef(5.0f, 0.0f, 20.0f);
+			//	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+			//	//glColor3f(0.0f,0.0f,0.0f);
+		 //       glScalef(0.05f, 0.05f, 0.05f);
+		 //       car1.draw();
+		   // glPopMatrix();
+		glPushMatrix();
         glTranslatef(-5.0f, 0.0f, 20.0f);
 		//glRotatef(45.0f, 0.0f, 1.0f, 0.0f);
 		//glColor3f(0.0f,0.0f,0.0f);
         glScalef(0.09f, 0.09f, 0.09f);
         charchater1.draw();
-    glPopMatrix();
+	    glPopMatrix();
 	
 	
 	
 	glutSwapBuffers();
+}
+void moveObject(ObjModel x,float  z, float  xmin, float xmax,float scale,float  y,int steps, int i)
+{
+		//i created an array of 10 floats assuming we will create no more than 10 cars per frame 
+		// steps is the no. that controls the interpolation of a car 
+		// i is a variable of each car which is used to get the proper element in count_steps which belongs to this car
+		int step1=(xmax-xmin)/steps;
+		count_steps[i]+=step1;
+		glPushMatrix();
+        glScalef(scale,scale,scale);
+		glTranslatef(count_steps[i], 0.0f, z);
+		glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+		//glColor3f(0.0f,0.0f,0.0f);
+        
+		x.draw();
+		glPopMatrix();
+    
 }

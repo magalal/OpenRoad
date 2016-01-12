@@ -57,7 +57,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\Work Space\C++\opengl\SDL2-2.0.3\lib\x86;E:\Work Space\C++\opengl\glew-1.11.0\lib;E:\Work Space\C++\opengl\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\mohamed\Documents\Visual Studio 2012\Projects\openGL1\SDL2-2.0.3\lib\x86;C:\openGL\glew-1.11.0\lib;C:\openGL\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>freeglut.lib;glew32.lib;opengl32.lib;SDL2.lib;SDL2main.lib;ComCtl32.Lib;ComDlg32.Lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -95,12 +95,6 @@
     <ClCompile Include="Sleep.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\opengl\freeglut\lib\freeglut.lib" />
-    <Library Include="..\..\opengl\glew-1.11.0\lib\glew32.lib" />
-    <Library Include="..\..\opengl\SDL2-2.0.3\lib\x86\SDL2.lib" />
-    <Library Include="..\..\opengl\SDL2-2.0.3\lib\x86\SDL2main.lib" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="GetGlut.h" />
     <ClInclude Include="ObjLibrary\DisplayList.h" />
     <ClInclude Include="ObjLibrary\GetGlut.h" />
@@ -120,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ObjLibrary\ObjLibrary-development-log.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\dependacies\freeglut\lib\freeglut.lib" />
+    <Library Include="..\..\dependacies\glew-1.11.0\lib\glew32s.lib" />
+    <Library Include="..\..\dependacies\SDL2-2.0.3\lib\x86\SDL2.lib" />
+    <Library Include="..\..\dependacies\SDL2-2.0.3\lib\x86\SDL2main.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
